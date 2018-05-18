@@ -1,20 +1,19 @@
-class UsersController < ApplicationController
-
-
+class Api::UsersController < ApplicationController
   def new
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       login(@user)
-      #TODO redirect_to featured_url (the featured/home page)
+      # render "api/playlists"  TODO this may need to be api/users/:userId/playlists
     else
-      flash.now[:errors] = @user.errors.full_messages
-      render :new
+      render json: @user.errors.full_messages, status: 422
     end
   end
+
 
   private
 
