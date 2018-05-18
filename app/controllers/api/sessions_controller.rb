@@ -4,16 +4,26 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:username], params[:user][:password])
-    if user
-      login(user)
+    @user = User.find_by_credentials(
+      params[:user][:username],
+      params[:user][:password]
+    )
+
+    if @user
+      login(@user)
+      # render "api/playlists" TODO uncomment when playlists are created
     else
-      flash.now[:errors] = "NO GO on the username and password"
+      render json: ["Invalid username/password combination"], status: 401
     end
   end
 
   def destroy
-    logout
-    redirect_to new_session_url
+    @user = current_user
+    if @user
+      logout
+      # render "api/session"
+    else
+      render json: ["Nobody signed in"], status: 404
+    end
   end
 end
