@@ -3,6 +3,10 @@ import {
   LOGOUT_CURRENT_USER
 } from '../actions/session_actions';
 
+
+// TODO I believe this will help us identify if there is a current user
+// in order to preload the currentUser if they refresh the page
+
 const _nullUser = Object.freeze({
   id: null
 });
