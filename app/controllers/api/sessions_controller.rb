@@ -11,7 +11,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
-      # render "api/playlists" TODO uncomment when playlists are created
+      render "api/users/show" #TODO Do I want to change this to api/playlists? May need to create view for playlists first
     else
       render json: ["Invalid username/password combination"], status: 401
     end

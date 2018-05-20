@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      # render "api/playlists"  TODO this may need to be api/users/:userId/playlists
+      render "api/users/show"  # TODO this may need to be api/users/:userId/playlists or something...
     else
       render json: @user.errors.full_messages, status: 422
     end
