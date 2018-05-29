@@ -37,35 +37,50 @@ class SessionForm extends React.Component {
     );
   }
 
+  alternate() {
+    let alternateMessage;
+    if (this.props.formType == "signup") {
+      alternateMessage = "Already have an account?";
+    } else {
+      alternateMessage = "Don't have an account?";
+    }
+
+    return alternateMessage;
+  }
+
   render () {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Soundify!
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
-          <div className="login-form">
+      <div>
+        <header>
+          <h1 className="greeting-logo"><i className="fas fa-headphones"></i> Soundify</h1>
+        </header>
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
             <br/>
-            <label>Username:
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
               <input type="text"
                 value={this.state.username}
+                placeholder="Username"
                 onChange={this.update('username')}
                 className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
+                />
+              <br/>
               <input type="password"
                 value={this.state.password}
+                placeholder="Password"
                 onChange={this.update('password')}
                 className="login-input"
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
-        </form>
+                />
+              <br/>
+              <input className="session-submit" type="submit" value={this.props.formType} />
+              <div>
+                {this.alternate()} <span> {this.props.navLink}</span>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
