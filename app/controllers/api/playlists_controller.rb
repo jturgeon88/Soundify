@@ -2,8 +2,7 @@ class Api::PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.all
-                        .includes(:songs)
-                        .where(author_id: current_user.id)    #TODO Not sure if this is going to give me
+                        #TODO Not sure if this is going to give me
                         #all playlists with the current_user.id matching author_id or songs that match that
     render :index
   end
@@ -66,4 +65,5 @@ class Api::PlaylistsController < ApplicationController
 
   def playlist_params
     params.require(:playlist).permit(:title)
+  end
 end

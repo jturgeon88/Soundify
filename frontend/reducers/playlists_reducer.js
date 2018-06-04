@@ -3,7 +3,7 @@ import {
   RECEIVE_PLAYLIST,
   REMOVE_PLAYLIST,
   RECEIVE_PLAYLIST_ERRORS,
-} from '../../actions/playlist_actions';
+} from '../actions/playlist_actions';
 
 // import {
 //   RECEIVE_SONGS,
