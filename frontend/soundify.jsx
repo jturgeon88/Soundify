@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 import { login, logout, signup } from './actions/session_actions';
-import * as APIUtil from './util/session_api_util';
-import * as PlaylistAPIUtil from './util/playlist_util';
+// import * as APIUtil from './util/session_api_util';
+// import * as PlaylistAPIUtil from './util/playlist_util';
+import { fetchPlaylists, fetchPlaylist, createPlaylist, updatePlaylist, deletePlaylist } from './actions/playlist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -26,7 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signup = signup;
   // window.login = login;
   // window.logout = logout;
-  window.fetchPlaylists = PlaylistAPIUtil.fetchPlaylists;
+  window.fetchPlaylists = fetchPlaylists;
+  window.fetchPlaylist = fetchPlaylist;
+  window.createPlaylist = createPlaylist;
+  window.updatePlaylist = updatePlaylist;
+  window.deletePlaylist = deletePlaylist;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // <- TESTING PURPOSES

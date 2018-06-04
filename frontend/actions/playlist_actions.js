@@ -11,27 +11,27 @@ export const RECEIVE_PLAYLIST_ERRORS = "RECEIVE_PLAYLIST_ERRORS";
 
 // Synchronous action creators:
 
-const receivePlaylists = playlists => ({
+export const receivePlaylists = playlists => ({
   type: RECEIVE_PLAYLISTS,
   playlists
 });
 
-const receivePlaylist = playlist => ({
+export const receivePlaylist = playlist => ({
   type: RECEIVE_PLAYLIST,
   playlist
 });
 
-const removePlaylist = playlist => ({
+export const removePlaylist = playlist => ({
   type: REMOVE_PLAYLIST,
   playlist
 });
 
-const receivePlaylistErrors = errors => ({
+export const receivePlaylistErrors = errors => ({
   type: RECEIVE_PLAYLIST_ERRORS,
   errors
 });
 
-const removePlaylists = () => ({
+export const removePlaylists = () => ({
   type: CLEAR_PLAYLISTS,
   playlists: []
 });
