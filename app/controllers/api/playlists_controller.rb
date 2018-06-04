@@ -41,7 +41,7 @@ class Api::PlaylistsController < ApplicationController
   def update
     @playlist = current_user.playlists.find_by(id: params[:id])
 
-    if @playlists && @playlist.update_attributes(playlist_params)
+    if @playlist && @playlist.update_attributes(playlist_params)
       render :show
     elsif @playlist
       render json: [Time.now].concat(@playlist.errors.full_messages), status: 424
@@ -55,7 +55,7 @@ class Api::PlaylistsController < ApplicationController
 
     if @playlist
       @playlist.destroy
-      render :delete
+      render json: @playlist            #changed this from render :delete because it was giving me a 500 internal server error
     else
       render json: ["This playlist aint yours sucka! Best not be destructive to others."], status: 422
     end
