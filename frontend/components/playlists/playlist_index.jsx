@@ -1,23 +1,23 @@
 import React from 'react';
-// import PlaylistIndexItem from './playlist_index_item';
+import PlaylistIndexItem from './playlist_index_item';
 import { Link } from 'react-router-dom';
 
 class PlaylistIndex extends React.Component {
   componentDidMount() {
-    const { fetchPlaylists } = this.props;
-    fetchPlaylists();
+    this.props.fetchPlaylists();
   }
 
   render() {
     const { playlists } = this.props;
-    console.log(this.props);
+    console.log(this.props.playlists);
 
+    const PlaylistsList = playlists.map(playlist => <PlaylistIndexItem key={playlist.id} playlist={playlist} />)
 
     return (
       <div>
-        <h1>Playlisssssts</h1>
-        <ul className="all_playlists">
-          { playlists.map((playlist) => <li>{playlist.title}</li>) }
+        <h1>Playlists: </h1>
+        <ul>
+          {PlaylistsList}
         </ul>
       </div>
     );

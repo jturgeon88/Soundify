@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signup = signup;
   // window.login = login;
   // window.logout = logout;
-  window.fetchPlaylists = fetchPlaylists;
-  window.fetchPlaylist = fetchPlaylist;
-  window.createPlaylist = createPlaylist;
-  window.updatePlaylist = updatePlaylist;
-  window.deletePlaylist = deletePlaylist;
+  // window.fetchPlaylists = fetchPlaylists;
+  // window.fetchPlaylist = fetchPlaylist;
+  // window.createPlaylist = createPlaylist;
+  // window.updatePlaylist = updatePlaylist;
+  // window.deletePlaylist = deletePlaylist;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // <- TESTING PURPOSES
