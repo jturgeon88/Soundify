@@ -14,11 +14,13 @@ class PlaylistIndex extends React.Component {
     const PlaylistsList = playlists.map(playlist => <PlaylistIndexItem key={playlist.id} playlist={playlist} />)
 
     return (
-      <div>
-        <h1>Playlists: </h1>
-        <ul>
-          {PlaylistsList}
-        </ul>
+      <div className="playlists-index-container">
+        <h1 className="playlists-header">Playlists: </h1>
+        <div className="playlists-index">
+          <ul>
+            {PlaylistsList}
+          </ul>
+        </div>
       </div>
     );
   }

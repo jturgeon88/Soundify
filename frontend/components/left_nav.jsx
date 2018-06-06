@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 
 
 const LeftNav = () => (
-  <div>
-    <nav>
-      <ul>
-        <li><Link to="/playists">Your Music</Link></li>
-      </ul>
+  <div className="left-nav-container">
+    <nav className="left-nav">
+      <div className="left-nav-expand">
+        <div className="left-nav-header">
+          <a className="logo">LOGO Soundify</a>
+          <ul>
+            <li><Link to="/search" className="left-nav-group">Search</Link></li>
+            <li><Link to="/collections/playists" className="left-nav-group">Your Music</Link></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </div>
 );
