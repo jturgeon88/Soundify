@@ -6,15 +6,13 @@ class Playlist < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-  # has_many :playlist_adds,
-  #   primary_key: :id,
-  #   foreign_key: :playlist_id,
-  #   class_name: :PlaylistAdd
 
-  # has_many :songs,
-  #   through: :playlist_adds,
-  #   source: :song
+  has_many :playlist_adds,
+    primary_key: :id,
+    foreign_key: :playist_id,
+    class_name: :PlaylistAdd
 
-
-
+  has_many :songs,
+    through: :playlist_adds,
+    source: :song
 end
