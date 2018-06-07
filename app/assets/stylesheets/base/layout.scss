@@ -4,7 +4,6 @@ html {
 }
 
 body {
-	float: left;
 	width: 1200px;
 	margin: 0 auto;
 	font-family: 'Montserrat';
@@ -16,7 +15,7 @@ body {
 	color: #eee;
 }
 
-main {
+.app {
 	width: 100%;
 	height: auto;
 }

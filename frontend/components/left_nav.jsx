@@ -11,7 +11,7 @@ const LeftNav = () => (
           <a className="logo">LOGO Soundify</a>
           <ul>
             <li><Link to="/search" className="left-nav-group">Search</Link></li>
-            <li><Link to="/collections/playists" className="left-nav-group">Your Music</Link></li>
+            <li><Link to="/collections/playlists" className="left-nav-group">Your Music</Link></li>
           </ul>
         </div>
       </div>
