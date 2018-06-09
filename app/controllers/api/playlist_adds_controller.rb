@@ -2,20 +2,22 @@ class Api::PlaylistAddsController < ApplicationController
    skip_before_action :verify_authenticity_token
 
   def create
+    @playlist = Playlist.find_by(id: params[:id])
+    @song = Song.find_by(id: params[:id])
     @playlist_add = PlaylistAdd.new
-    @playlist_add.playlist_id = params[:playlist_id]
-    @playlist_add.song_id = params[:song_id]
-    puts @playlist_add
+    @playlist_add.playlist_id = @playlist.id
+    @playlist_add.song_id = @song.id
 
-    if @playlist_add.save
+
+    if @playlist_add.save!
       render :show        #this show SHOULD render the playlist; We'll see if it works
     else
-      render json: ["Song already on this playlist"], status: 422
+      render json: ["this song is already on this playlist"], status: 422
     end
   end
 
   def show
-    @playlist = Playlist.find_by(id: params[:id])
+    @playlist = Playlist.find_by(id: params[:playlist_id])
     @playlist.id = params[:id]
   end
 
@@ -34,7 +36,7 @@ class Api::PlaylistAddsController < ApplicationController
 
   # private
   #
-  # def playlist_add_params
-  #   params.require(:playlist_add).permit(:song_id, :playlist_id)
-  # end
+  def playlist_add_params
+    params.require(:playlist_add).permit(:song_id, :playlist_id)
+  end
 end

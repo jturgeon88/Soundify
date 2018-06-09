@@ -21,12 +21,12 @@ class Playlist < ApplicationRecord
   end
 
   def self.find_playlist(query_params)
-    playlist = Playlist.find_title(query_params[:playlist_add][:title])
+    playlist = Playlist.find_title(query_params[:playlist][:title])
     if playlist
     else
       playlist = Playlist.new(query_params.require(:playlist_add).permit(:title))
       playlist.save
     end
-    tag
+    playlist
   end
 end
