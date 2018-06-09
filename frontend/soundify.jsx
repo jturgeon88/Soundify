@@ -9,7 +9,7 @@ import Root from './components/root';
 // import { login, logout, signup } from './actions/session_actions';
 // import { fetchPlaylists, fetchPlaylist, createPlaylist, updatePlaylist, deletePlaylist } from './actions/playlist_actions';
 // import * as SongAPIUtil from './util/song_util';
-// import { fetchSongs } from './actions/song_actions';
+import { fetchSongs } from './actions/song_actions';
 // import * as ArtistAPIUtil from './util/artist_util';
 import { fetchArtists, fetchArtist } from './actions/artist_actions';
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.updatePlaylist = updatePlaylist;
   // window.deletePlaylist = deletePlaylist;
   // window.fetchSongs = SongAPIUtil.fetchSongs;
-  // window.fetchSongs = fetchSongs;
+  window.fetchSongs = fetchSongs;
   // window.fetchArtists = ArtistAPIUtil.fetchArtists;
   window.fetchArtists = fetchArtists;
   window.fetchArtist = fetchArtist;
