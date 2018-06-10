@@ -2,8 +2,8 @@ class Api::PlaylistAddsController < ApplicationController
    skip_before_action :verify_authenticity_token
 
   def create
-    @playlist = Playlist.find_by(id: params[:id])
-    @song = Song.find_by(id: params[:id])
+    @playlist = Playlist.find_by(id: params[:playlist_id])
+    @song = Song.find_by(id: params[:song_id])
     @playlist_add = PlaylistAdd.new
     @playlist_add.playlist_id = @playlist.id
     @playlist_add.song_id = @song.id
