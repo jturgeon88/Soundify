@@ -13,6 +13,11 @@ const MainPage = () => (
       <Route path='/collections/' component={HeaderNav} />
     </Switch>
 
+    <audio controls>
+      <source src="bensound-ukulele.mp3" type="audio/mpeg"/>
+      Your browser does not support the audio tag.
+    </audio>
+
     <Switch>
       <Route exact path='/collections/playlists' component={PlaylistIndexContainer} />
       <Route exact path='/collections' component={PlaylistIndexContainer} />

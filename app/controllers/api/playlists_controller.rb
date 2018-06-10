@@ -25,8 +25,9 @@ class Api::PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find_by(id: params[:id])     # TODO .includes(:songs)
+    @songs = @playlist.songs
 
-    if @playlist
+    if @playlist && @songs
       render :show
     else
       render json: ["this playlist does not exist"], status: 422

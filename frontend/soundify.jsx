@@ -9,9 +9,10 @@ import Root from './components/root';
 // import { login, logout, signup } from './actions/session_actions';
 // import { fetchPlaylists, fetchPlaylist, createPlaylist, updatePlaylist, deletePlaylist } from './actions/playlist_actions';
 // import * as SongAPIUtil from './util/song_util';
-import { fetchSongs } from './actions/song_actions';
+// import { fetchSongs } from './actions/song_actions';
 // import * as ArtistAPIUtil from './util/artist_util';
-import { fetchArtists, fetchArtist } from './actions/artist_actions';
+// import { fetchArtists, fetchArtist } from './actions/artist_actions';
+import * as PlaylistAddAPIUtil from './util/playlist_add_util';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -39,10 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.updatePlaylist = updatePlaylist;
   // window.deletePlaylist = deletePlaylist;
   // window.fetchSongs = SongAPIUtil.fetchSongs;
-  window.fetchSongs = fetchSongs;
+  // window.fetchSongs = fetchSongs;
   // window.fetchArtists = ArtistAPIUtil.fetchArtists;
-  window.fetchArtists = fetchArtists;
-  window.fetchArtist = fetchArtist;
+  // window.fetchArtists = fetchArtists;
+  // window.fetchArtist = fetchArtist;
+  window.fetchPlaylistAdds = PlaylistAddAPIUtil.fetchPlaylistAdds;
+  window.fetchPlaylistAdd = PlaylistAddAPIUtil.fetchPlaylistAdd;
+  window.createPlaylistAdd = PlaylistAddAPIUtil.createPlaylistAdd;
+  window.deletePlaylistAdd = PlaylistAddAPIUtil.deletePlaylistAdd;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // <- TESTING PURPOSES

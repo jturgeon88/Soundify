@@ -1,11 +1,17 @@
 class Api::PlaylistAddsController < ApplicationController
    skip_before_action :verify_authenticity_token
 
+   def index
+     @playlist_adds = PlaylistAdd.all
+     render :index
+   end
+
   def create
-    @playlist = Playlist.find_by(id: params[:playlist_id])
-    @song = Song.find_by(id: params[:song_id])
+    # binding.pry
+    @playlist = Playlist.find_by(id: params[:playlistAdd][:playlist_id])
+    @song = Song.find_by(id: params[:playlistAdd][:song_id])
     @playlist_add = PlaylistAdd.new
-    @playlist_add.playlist_id = @playlist.id
+    @playlist_add.playlist_id = @playlist.id      #getting errors here - @playlist returning nil
     @playlist_add.song_id = @song.id
 
 
@@ -17,8 +23,13 @@ class Api::PlaylistAddsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.find_by(id: params[:playlist_id])
-    @playlist.id = params[:id]
+    @playlist_add = PlaylistAdd.find_by(id: params[:id])
+
+    if @playlist_add
+      render :show
+    else
+      render json: ["This playlist does not exist"], status: 422
+    end
   end
 
 
@@ -28,9 +39,9 @@ class Api::PlaylistAddsController < ApplicationController
 
     if @playlist_add
       @playlist_add.destroy
-      render :delete
+      redirect_to api_playlist_url(@playlist_add.playlist_id)
     else
-
+      render json: ["cannot find playlist_add"], status: 422
     end
   end
 

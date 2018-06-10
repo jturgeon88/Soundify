@@ -9,7 +9,7 @@ class Playlist < ApplicationRecord
 
   has_many :playlist_adds,
     primary_key: :id,
-    foreign_key: :playist_id,
+    foreign_key: :playlist_id,
     class_name: :PlaylistAdd
 
   has_many :songs,
