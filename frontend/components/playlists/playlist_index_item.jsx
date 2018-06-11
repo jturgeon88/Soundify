@@ -8,6 +8,7 @@ const PlaylistIndexItem = ({ playlist }) => {
         <li className="playlistStyle">
           <ul className="playlist-index-item-padding">
             <li>{playlist.title}</li>
+            <li>{playlist.author_id}</li>
           </ul>
         </li>
       </Link>

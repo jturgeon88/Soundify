@@ -2,6 +2,7 @@ class Api::PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.all
+                        .where(author_id: current_user.id)
                         #TODO Not sure if this is going to give me
                         #all playlists with the current_user.id matching author_id or songs that match that
     render :index
@@ -24,8 +25,9 @@ class Api::PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find_by(id: params[:id])     # TODO .includes(:songs)
+    @songs = @playlist.songs
 
-    if @playlist
+    if @playlist && @songs
       render :show
     else
       render json: ["this playlist does not exist"], status: 422
