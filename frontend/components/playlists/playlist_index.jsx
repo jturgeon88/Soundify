@@ -1,6 +1,7 @@
 import React from 'react';
-import PlaylistIndexItem from './playlist_index_item';
 import { Link } from 'react-router-dom';
+
+import PlaylistIndexItem from './playlist_index_item';
 
 class PlaylistIndex extends React.Component {
   componentDidMount() {
@@ -9,7 +10,6 @@ class PlaylistIndex extends React.Component {
 
   render() {
     const { playlists } = this.props;
-    console.log(this.props.playlists);
 
     const PlaylistsList = playlists.map(playlist => <PlaylistIndexItem key={playlist.id} playlist={playlist} />)
 
