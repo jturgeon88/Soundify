@@ -12,7 +12,8 @@ import Root from './components/root';
 // import { fetchSongs } from './actions/song_actions';
 // import * as ArtistAPIUtil from './util/artist_util';
 // import { fetchArtists, fetchArtist } from './actions/artist_actions';
-import * as PlaylistAddAPIUtil from './util/playlist_add_util';
+// import * as PlaylistAddAPIUtil from './util/playlist_add_util';
+import { fetchPlaylistAdds , fetchPlaylistAdd, createPlaylistAdd, deletePlaylistAdd } from './actions/playlist_add_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -44,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchArtists = ArtistAPIUtil.fetchArtists;
   // window.fetchArtists = fetchArtists;
   // window.fetchArtist = fetchArtist;
-  window.fetchPlaylistAdds = PlaylistAddAPIUtil.fetchPlaylistAdds;
-  window.fetchPlaylistAdd = PlaylistAddAPIUtil.fetchPlaylistAdd;
-  window.createPlaylistAdd = PlaylistAddAPIUtil.createPlaylistAdd;
-  window.deletePlaylistAdd = PlaylistAddAPIUtil.deletePlaylistAdd;
+  window.fetchPlaylistAdds = fetchPlaylistAdds;
+  window.fetchPlaylistAdd = fetchPlaylistAdd;
+  window.createPlaylistAdd = createPlaylistAdd;
+  window.deletePlaylistAdd = deletePlaylistAdd;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // <- TESTING PURPOSES
