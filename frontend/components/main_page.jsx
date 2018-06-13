@@ -9,16 +9,13 @@ const MainPage = () => (
   <div className="main-page-container">
     <h1>MainPage</h1>
     <Switch>
-      <Route path='/collections/playlists' component={HeaderNav} />
-      <Route path='/collections/songs' component={HeaderNav} />
-      <Route path='/collections/artists' component={HeaderNav} />
-      <Route path='/collections/' component={HeaderNav} />
+      <Route exact path='/collections/playlists' component={HeaderNav} />
+      <Route exact path='/collections/songs' component={HeaderNav} />
+      <Route exact path='/collections/artists' component={HeaderNav} />
+      <Route exact path='/collections/' component={HeaderNav} />
     </Switch>
 
-    <audio controls>
-      <source src="bensound-ukulele.mp3" type="audio/mpeg"/>
-      Your browser does not support the audio tag.
-    </audio>
+
 
     <Switch>
       <Route exact path='/collections/playlists' component={PlaylistIndexContainer} />

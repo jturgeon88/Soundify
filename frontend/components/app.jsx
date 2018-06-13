@@ -7,6 +7,7 @@ import GreetingContainer from './greeting/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import MainPage from './main_page';
 import LeftNav from './left_nav';
+import MusicBar from './music_bar';
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
 
     <ProtectedRoute path="/collections" component={LeftNav} />
     <ProtectedRoute path="/collections" component={MainPage} />
+    <ProtectedRoute path="/collections" component={MusicBar} />
 
     <Switch>
       <Route exact path="/" component={GreetingContainer} />
