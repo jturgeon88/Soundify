@@ -4,7 +4,7 @@ import { createPlaylist } from '../../actions/playlist_actions';
 import PlaylistForm from './playlist_form';
 
 const mapStateToProps = (state) => ({
-
+  
 });
 
 const mapDispatchToProps = dispatch => ({

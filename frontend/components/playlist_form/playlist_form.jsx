@@ -10,16 +10,16 @@ class PlaylistForm extends React.Component {
     });
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const bench = Object.assign({}, this.state, this.coords);
-  //   this.props.createBench(bench);
-  //   this.navigateToSearch();
-  // }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createBench(bench);
+    this.navigateToSearch();
+  }
 
   render () {
     return (
-
+      <div className="playlist-form-modal">
+      </div>
     )
   }
 }
