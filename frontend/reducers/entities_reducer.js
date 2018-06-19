@@ -13,7 +13,7 @@ const entitiesReducer = combineReducers({
   playlist_adds: playlistAddsReducer,
   songs: songsReducer,
   artists: artistsReducer,
-  currentPlaylist: musicBarReducer
+  nowPlayingQueue: musicBarReducer
 });
 
 export default entitiesReducer;

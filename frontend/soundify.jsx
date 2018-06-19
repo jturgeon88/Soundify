@@ -14,6 +14,7 @@ import Root from './components/root';
 // import { fetchArtists, fetchArtist } from './actions/artist_actions';
 // import * as PlaylistAddAPIUtil from './util/playlist_add_util';
 import { fetchPlaylistAdds , fetchPlaylistAdd, createPlaylistAdd, deletePlaylistAdd } from './actions/playlist_add_actions';
+import { fetchNextPlaylist, fetchNextSong, fetchAndPlayPlaylist, fetchAndPlaySong } from './actions/music_bar_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -45,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchArtists = ArtistAPIUtil.fetchArtists;
   // window.fetchArtists = fetchArtists;
   // window.fetchArtist = fetchArtist;
+  window.fetchAndPlayPlaylist = fetchAndPlayPlaylist;
+  window.fetchAndPlaySong = fetchAndPlaySong;
+  window.fetchNextPlaylist = fetchNextPlaylist;
+  window.fetchNextSong = fetchNextSong;
   window.fetchPlaylistAdds = fetchPlaylistAdds;
   window.fetchPlaylistAdd = fetchPlaylistAdd;
   window.createPlaylistAdd = createPlaylistAdd;

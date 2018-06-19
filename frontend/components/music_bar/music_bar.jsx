@@ -7,7 +7,7 @@ import ReactAudioPlayer from 'react-audio-player';
   width={600}
   height={400}
   autoPlay={true}
-  playlist={currentPlaylist}
+  playlist={nowPlayingQueue}
   />
 
   */}
@@ -21,25 +21,24 @@ class MusicBar extends React.Component {
 
   componentDidMount() {
     console.log("testingDIDMOUNT");
-    this.props.fetchCurrentPlaylist(1);
+    this.props.fetchNextPlaylist(2);  // TODO This needs to change. Can't have this hard coded id
   }
+
 
   // handleClick (event) {
   //   event.preventDefault();
-  //   this.setState({ currentSong: "bensound-funnysong.mp3" });
+  //   this.setState({ nowPlayingSong: "bensound-funnysong.mp3" });
   // }
 
 
   render() {
-    const { currentPlaylist } = this.props;
-    if (!(currentPlaylist == undefined) && (Object.keys(currentPlaylist).length > 0)) {
-      const currentSongs = currentPlaylist[1].songs;
-      const randomIndex = Math.floor(Math.random() * Math.floor(currentSongs.length))
-      const currentSong = currentSongs[randomIndex];
+    const { nowPlayingQueue } = this.props;
+    if (!(nowPlayingQueue == undefined) && (nowPlayingQueue.length > 0)) {
+      const randomIndex = Math.floor(Math.random() * Math.floor(nowPlayingQueue.length))
+      const nowPlayingSong = nowPlayingQueue[randomIndex];
       console.log("Test 2 (playlist)");
-      console.log(currentPlaylist);
-      console.log(currentSongs);
-      console.log(currentSong);
+      console.log(nowPlayingQueue);
+      console.log(nowPlayingSong);
       console.log(randomIndex);
 
 
@@ -48,7 +47,7 @@ class MusicBar extends React.Component {
           <footer className="music-bar-footer">
             <h1>Music Bar</h1>
             <ReactAudioPlayer
-              src={currentSong.src}
+              src={nowPlayingSong.src}
               controls
               />
 

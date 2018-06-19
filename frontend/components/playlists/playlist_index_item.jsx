@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PlaylistIndexItem = ({ playlist }) => {
+const PlaylistIndexItem = ({ playlist, fetchAndPlayPlaylist }) => {
+
+  // function handleClick(event) {
+  //   event.preventDefault();
+  //   return fetchAndPlayPlaylist(playlist.id);
+  // }
 
   return (
+    <div>
       <Link to={`/collections/playlists/${playlist.id}`}>
         <li className="playlistStyle">
           <ul className="playlist-index-item-padding">
@@ -12,6 +18,8 @@ const PlaylistIndexItem = ({ playlist }) => {
           </ul>
         </li>
       </Link>
+      <button onClick={() => fetchAndPlayPlaylist(playlist.id)}>Play Playlist</button>
+    </div>
   );
 }
 
