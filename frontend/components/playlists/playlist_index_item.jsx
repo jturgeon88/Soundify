@@ -18,7 +18,7 @@ const PlaylistIndexItem = ({ playlist, fetchAndPlayPlaylist }) => {
           </ul>
         </li>
       </Link>
-      <button onClick={() => fetchAndPlayPlaylist(playlist.id)}>Play Playlist</button>
+      <button onClick={() => fetchNextPlaylist(playlist.id)}>Play Playlist</button>
     </div>
   );
 }
