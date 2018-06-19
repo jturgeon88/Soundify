@@ -1,26 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PlaylistIndexItem = ({ playlist, fetchAndPlayPlaylist }) => {
+class PlaylistIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-  // function handleClick(event) {
-  //   event.preventDefault();
-  //   return fetchAndPlayPlaylist(playlist.id);
-  // }
+  handleClick(event) {
+    event.preventDefault();
+    this.props.fetchAndPlayPlaylist(this.props.playlist.id);
+  }
 
-  return (
-    <div>
-      <Link to={`/collections/playlists/${playlist.id}`}>
-        <li className="playlistStyle">
-          <ul className="playlist-index-item-padding">
-            <li>{playlist.title}</li>
-            <li><span>Number of songs: </span><span>{playlist.songs.length}</span></li>
-          </ul>
-        </li>
-      </Link>
-      <button onClick={() => fetchNextPlaylist(playlist.id)}>Play Playlist</button>
-    </div>
-  );
+  render () {
+    return (
+      <div>
+        <Link to={`/collections/playlists/${this.props.playlist.id}`}>
+          <li className="playlistStyle">
+            <ul className="playlist-index-item-padding">
+              <li>{this.props.playlist.title}</li>
+              <li><span>Number of songs: </span><span>{this.props.playlist.songs.length}</span></li>
+            </ul>
+          </li>
+        </Link>
+        <button onClick={this.handleClick}>Play Playlist</button>
+      </div>
+    );
+  }
 }
+
+
 
 export default PlaylistIndexItem;

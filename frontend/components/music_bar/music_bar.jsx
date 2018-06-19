@@ -49,6 +49,7 @@ class MusicBar extends React.Component {
             <ReactAudioPlayer
               src={nowPlayingSong.src}
               controls
+              autoPlay
               />
 
           </footer>
