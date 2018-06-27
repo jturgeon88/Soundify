@@ -25,10 +25,10 @@ class MusicBar extends React.Component {
   }
 
 
-  // handleClick (event) {
-  //   event.preventDefault();
-  //   this.setState({ nowPlayingSong: "bensound-funnysong.mp3" });
-  // }
+  handleClick (event) {
+    event.preventDefault();
+
+  }
 
 
   render() {
@@ -46,11 +46,17 @@ class MusicBar extends React.Component {
         <div className="music-bar-container">
           <footer className="music-bar-footer">
             <h1>Music Bar</h1>
-            <ReactAudioPlayer
+
+            <audio
+              ref="player"
               src={nowPlayingSong.src}
-              controls
               autoPlay
-              />
+
+            />
+            <div>
+              <button onClick={() => this.refs.player.play()}>Play</button>
+              <button onClick={() => this.refs.player.pause()}>Pause</button>
+            </div>
 
           </footer>
         </div>
