@@ -7,11 +7,11 @@ Users have the ability to create playlists, add or delete songs from the playlis
 
 ## Features Overview
 
-* Playlists
+* Playlists (In Progress)
     * logged in users have the ability to create, view, edit, and destroy their own playlists
-* Songs 
+* Songs (Not Complete) 
     * Users can view songs and add them to a specified playlist or play them
-* Search
+* Search (In Progress)
     * Users can search for specific songs, playlists, or artists
-* Continuous Play
+* Continuous Play (Functional but not pretty yet)
     * Users can play individual songs or full playlists while navigating the site without interrupting the current song
