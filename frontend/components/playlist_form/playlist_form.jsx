@@ -3,7 +3,6 @@ import React from 'react';
 
 class PlaylistForm extends React.Component {
 
-
   update(property) {
     return e => this.setState({
       [property]: e.target.value
@@ -23,3 +22,5 @@ class PlaylistForm extends React.Component {
     )
   }
 }
+
+export default
