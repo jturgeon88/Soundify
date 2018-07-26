@@ -9,13 +9,14 @@ class PlaylistIndex extends React.Component {
   }
 
   render() {
-    const { playlists } = this.props;
+    const { playlists, fetchNextPlaylist, fetchAndPlayPlaylist } = this.props;
 
     const PlaylistsList = playlists.map(playlist => (
       <PlaylistIndexItem
         key={playlist.id}
         playlist={playlist}
         fetchAndPlayPlaylist={fetchAndPlayPlaylist}
+        fetchNextPlaylist={fetchNextPlaylist}
       />
     ));
 

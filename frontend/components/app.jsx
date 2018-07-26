@@ -36,7 +36,7 @@ class App extends React.Component {
 
         <ProtectedRoute path="/collections" component={LeftNav} />
         <ProtectedRoute path="/collections" component={MainPage} />
-        <MusicBarContainer />
+        <ProtectedRoute path="/collections" component={MusicBarContainer} />
 
         <Switch>
           <Route exact path="/" component={GreetingContainer} />
