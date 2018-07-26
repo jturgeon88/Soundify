@@ -1,19 +1,16 @@
 import { connect } from 'react-redux';
-
-import { createPlaylist } from '../../actions/playlist_actions';
 import { toggleModal } from '../../actions/modal_actions';
-import PlaylistForm from './playlist_form';
+import Modal from './modal';
 
 const mapStateToProps = (state) => ({
-
+  modalIsOpen: state.ui.modal
 });
 
-const mapDispatchToProps = dispatch => ({
-  createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+const mapDispatchToProps = (dispatch) => ({
   toggleModal: () => dispatch(toggleModal())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlaylistForm);
+)(Modal);
