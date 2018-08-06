@@ -50,8 +50,8 @@ class MusicBar extends React.Component {
             <audio
               ref="player"
               src={nowPlayingSong.src}
+              controls={false}
               autoPlay
-              controls
             />
             <div>
               <button onClick={() => this.refs.player.play()}>Play</button>
