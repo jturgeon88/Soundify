@@ -5,7 +5,9 @@ import PlaylistIndexItem from './playlist_index_item';
 
 class PlaylistIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchPlaylists();
+    if (this.props.playlists.length == 0) {
+      this.props.fetchPlaylists();
+    }
   }
 
   render() {

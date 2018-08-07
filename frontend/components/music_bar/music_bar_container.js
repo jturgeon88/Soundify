@@ -3,7 +3,8 @@ import { fetchNextPlaylist } from '../../actions/music_bar_actions';
 import MusicBar from './music_bar';
 
 const mapStateToProps = (state) => ({
-  nowPlayingQueue: state.entities.nowPlayingQueue
+  nowPlayingQueue: state.entities.nowPlayingQueue,
+  playlistIndices: Object.keys(state.entities.playlists)
 });
 
 

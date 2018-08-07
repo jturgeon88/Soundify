@@ -4,7 +4,9 @@ import ArtistsIndexItem from './artist_index_item';
 
 class ArtistsIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchArtists();
+    if (this.props.artists.length == 0) {
+      this.props.fetchArtists();
+    }
   }
 
   render() {

@@ -6,7 +6,13 @@ import { Link } from 'react-router-dom';
 class SongsIndex extends React.Component {
   componentDidMount() {
     // fetch the songs from the database as soon as the component has mounted
-    this.props.fetchSongs();
+    console.log("TESTING SONGS FORMAT1")
+    console.log(this.props.songs.length);
+    if (this.props.songs.length == 0) {
+      this.props.fetchSongs();
+    }
+    console.log("TESTING SONGS FORMAT2")
+    console.log(this.props.songs.length);
   };
 
   render() {

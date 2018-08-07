@@ -1,24 +1,17 @@
-# README
+# Soundify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Soundify is a full-stack web application that is a colorful clone of the popular music streaming app Spotify. It is built on a Ruby on Rails backend, PostgreSQL database, and React with a Redux architecture frontend.
 
-* Ruby version
+Users have the ability to create playlists, add or delete songs from the playlists, search through songs and artists. Playlists are saved in the database. Songs and Playlists can play asynchronously while navigating the rest of the app.
 
-* System dependencies
+## Features Overview
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Playlists (In Progress)
+    * logged in users have the ability to create, view, edit, and destroy their own playlists
+* Songs (Not Complete) 
+    * Users can view songs and add them to a specified playlist or play them
+* Search (In Progress)
+    * Users can search for specific songs, playlists, or artists
+* Continuous Play (Functional but not pretty yet)
+    * Users can play individual songs or full playlists while navigating the site without interrupting the current song
