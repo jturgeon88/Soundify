@@ -14,14 +14,14 @@ import ReactAudioPlayer from 'react-audio-player';
 
 
 class MusicBar extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      currentSong: "bensound-slowmotion.mp3"
-    };
-
-    this.changeSong = this.changeSong.bind(this);
-  }
+  // constructor (props) {
+  //   super(props);
+  //   this.state = {
+  //     currentSong: "bensound-slowmotion.mp3"
+  //   };
+  //
+  //   this.changeSong = this.changeSong.bind(this);
+  // }
 
   changeSong(newSong) {
     this.setState({currentSong: newSong})
@@ -33,8 +33,8 @@ class MusicBar extends React.Component {
 
   componentDidMount() {
     console.log("testingDIDMOUNT");
-    const firstIndex = this.props.playlistIndices[0];
-    console.log(firstIndex);
+    // const firstIndex = this.props.playlistIndices[0];
+    // console.log(firstIndex);
     // this.props.fetchNextPlaylist(firstIndex);  // TODO This needs to change. Can't have this hard coded id
   }
 
@@ -47,7 +47,6 @@ class MusicBar extends React.Component {
 
   render() {
     const { nowPlayingQueue } = this.props;
-    console.log(this.props.playlistIndices);
     if (!(nowPlayingQueue == undefined) && (nowPlayingQueue.length > 0)) {
       const randomIndex = Math.floor(Math.random() * Math.floor(nowPlayingQueue.length))
       const nowPlayingSong = nowPlayingQueue[randomIndex];
