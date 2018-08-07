@@ -20,7 +20,7 @@ class App extends React.Component {
   //
   //   this.changeSong = this.changeSong.bind(this);
   // }
-
+  //
   // changeSong(newSong) {
   //   this.setState({currentSong: newSong})
   // }
@@ -36,8 +36,8 @@ class App extends React.Component {
 
         <ProtectedRoute path="/collections" component={LeftNav} />
         <ProtectedRoute path="/collections" component={MainPage} />
-        <ProtectedRoute path="/collections" component={MusicBarContainer} />
 
+        <MusicBarContainer />
         <Switch>
           <Route exact path="/" component={GreetingContainer} />
         </Switch>
