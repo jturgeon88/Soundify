@@ -65,7 +65,6 @@ class MusicBar extends React.Component {
             <audio
               ref="player"
               src={nowPlayingSong.src}
- 
               controls
             />
             <div>
