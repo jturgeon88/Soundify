@@ -25,7 +25,10 @@ class MainPage extends React.Component {
           <Route exact path='/collections/' component={HeaderNavContainer} />
         </Switch>
 
-        <ModalRoute path="/collections/playlists" component={PlaylistFormContainer} />
+        <Switch>
+          <ModalRoute path="/collections/playlists" component={PlaylistFormContainer} />
+          <ModalRoute path="/collections" component={PlaylistFormContainer} />
+        </Switch>
 
         <Switch>
           <Route exact path='/collections/playlists' component={PlaylistIndexContainer} />
