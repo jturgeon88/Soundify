@@ -18,8 +18,8 @@ class MusicBar extends React.Component {
     super(props);
     this.state = {
       currentSong: "bensound-slowmotion.mp3",
-      currentSongIdx: 0,
-      shuffle: false
+      shuffle: false,
+      currentSongIdx: 0
     };
 
     this.changeSong = this.changeSong.bind(this);
@@ -37,7 +37,7 @@ class MusicBar extends React.Component {
   }
 
   componentDidMount() {
-    // this.setState({currentSong: this.props.nowPlayingQueue[0] ? this.props.nowPlayingQueue[0].src : "bensound-slowmotion.mp3"})
+
   }
 
   prevSong (event) {
@@ -56,28 +56,28 @@ class MusicBar extends React.Component {
 
   toggleShuffle (event) {
     event.preventDefault();
-    this.setState({shuffle: !this.state.shuffle});
+    this.setState({shuffle: !this.state.shuffle, currentSongIdx: Math.floor(Math.random() * Math.floor(this.props.nowPlayingQueue.length))});
   }
 
 
   render() {
     const { nowPlayingQueue } = this.props;
-    if (!(nowPlayingQueue == undefined) && (nowPlayingQueue.length > 0)) {
-      let nowPlayingSong;
-      if (this.state.shuffle) {
-        const randomIndex = Math.floor(Math.random() * Math.floor(nowPlayingQueue.length));
-        nowPlayingSong = nowPlayingQueue[randomIndex];
-        console.log("Shuffling");
-        console.log(nowPlayingSong);
-        console.log(randomIndex);
+    const nowPlayingSong = nowPlayingQueue[this.state.currentSongIdx];
 
-      } else {
-        nowPlayingSong = nowPlayingQueue[this.state.currentSongIdx];
-        console.log("Not Shuffling");
+    if (!(nowPlayingQueue == undefined) && (nowPlayingQueue.length > 0)) {
+      // if (this.state.shuffle) {
+      //   const randomIndex = Math.floor(Math.random() * Math.floor(nowPlayingQueue.length));
+      //   nowPlayingSong = nowPlayingQueue[randomIndex];
+      //   console.log("Shuffling");
+      //   console.log(nowPlayingSong);
+      //   console.log(randomIndex);
+      //
+      // } else {
+        console.log(this.state.shuffle);
         console.log(nowPlayingSong);
         console.log(this.state.currentSongIdx);
 
-      }
+      // }
 
       return (
         <div className="music-bar-container">
