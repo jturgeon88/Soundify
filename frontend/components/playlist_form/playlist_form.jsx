@@ -21,6 +21,7 @@ class PlaylistForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createPlaylist(this.state);
+    this.props.toggleModal();
   }
 
   render () {

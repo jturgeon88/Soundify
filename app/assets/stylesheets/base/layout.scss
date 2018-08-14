@@ -3,8 +3,45 @@ html {
 	height: 100%;
 }
 
+.all-height {
+	height: 100%;
+}
+
+[class*='flexbox'] {
+  display: flex;
+}
+
+.flexbox-column {
+  flex-direction: column;
+}
+
+.flexbox-row {
+  flex-direction: row;
+}
+
+.flex-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.errors {
+  color: red;
+}
+
+.hidden {
+	display:none;
+}
+
+.app {
+	position: relative;
+	box-sizing: border-box;
+	height:100vh;
+	width: 100vw;
+
+}
+
 body {
-	// width: 1200px;
+	width: 100%;
 	// margin: 0 auto;
 	font-family: 'Montserrat';
 	font-size: 100%;
@@ -13,11 +50,6 @@ body {
   background-position: 0 0;
   background-size: cover;
 	color: #eee;
-}
-
-.app {
-	width: 100%;
-	height: auto;
 }
 
 
@@ -44,10 +76,6 @@ button:hover {
 
 a:hover {
 	// text-decoration: underline;
-}
-
-.hidden {
-	// display: none;
 }
 
 // Font Elements

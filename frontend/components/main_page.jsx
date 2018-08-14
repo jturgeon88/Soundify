@@ -5,8 +5,8 @@ import PlaylistIndexContainer from './playlists/playlist_index_container';
 import SongsIndexContainer from './songs/songs_index_container';
 import ArtistsIndexContainer from './artists/artists_index_container';
 import { fetchPlaylists } from '../actions/playlist_actions';
-import { ModalRoute } from '../util/route_util';
-import PlaylistFormContainer from './playlist_form/playlist_form_container';
+
+
 
 class MainPage extends React.Component {
   constructor (props) {
@@ -25,10 +25,7 @@ class MainPage extends React.Component {
           <Route exact path='/collections/' component={HeaderNavContainer} />
         </Switch>
 
-        <Switch>
-          <ModalRoute path="/collections/playlists" component={PlaylistFormContainer} />
-          <ModalRoute path="/collections" component={PlaylistFormContainer} />
-        </Switch>
+
 
         <Switch>
           <Route exact path='/collections/playlists' component={PlaylistIndexContainer} />

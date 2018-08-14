@@ -9,6 +9,8 @@ import MainPage from './main_page';
 import LeftNav from './left_nav';
 import MusicBarContainer from './music_bar/music_bar_container';
 import { fetchPlaylist } from '../actions/playlist_actions';
+import { ModalRoute } from '../util/route_util';
+import PlaylistFormContainer from './playlist_form/playlist_form_container';
 
 
 class App extends React.Component {
@@ -36,6 +38,11 @@ class App extends React.Component {
 
         <ProtectedRoute path="/collections" component={LeftNav} />
         <ProtectedRoute path="/collections" component={MainPage} />
+
+        <Switch>
+          <ModalRoute path="/collections/playlists" component={PlaylistFormContainer} />
+          <ModalRoute path="/collections" component={PlaylistFormContainer} />
+        </Switch>
 
         <ProtectedRoute path="/" component={MusicBarContainer} />
         <Switch>
