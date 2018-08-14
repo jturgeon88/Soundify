@@ -42,14 +42,17 @@ html {
 
 body {
 	width: 100%;
-	// margin: 0 auto;
+	margin: 0 auto;
 	font-family: 'Montserrat';
-	font-size: 100%;
-  background: linear-gradient(rgba(0, 0, 30, 0.7), rgba(0, 0, 10, 0.8)), url(IMG_2783.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
+	// font-size: 100%;
+  background: linear-gradient(rgba(0, 0, 30, 0.7), rgba(0, 0, 10, 0.8));//, url(IMG_2783.jpg);
+  // background-repeat: no-repeat;
+  // background-position: 0 0;
+  // background-size: cover;
 	color: #eee;
+
+	font-size: 15px;
+	box-sizing: border-box;
 }
 
 

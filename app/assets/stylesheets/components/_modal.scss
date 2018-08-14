@@ -1,24 +1,24 @@
 
 .modal-box {
   position: absolute;
-  top: 10vh;
-  left: 100vh;
+  top: 40vh;
+  left: 0vw;
   z-index: 10;
-  background: purple;
+  background: rgba(72,72,72,1);
+  // transform: translate(-50%, -50%);
   border: transparent;
-  border-radius: 15px;
+
   width: 100%;
-  height: 100px;
+  height: 200px;
 }
 
 .modal-background {
   position: absolute;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   top: 0px;
   left: 0px;
   z-index: 9;
-  background: rgba(0, 0, 0, 0.3);
-  transform: translate(50%, 50%);
+  background: rgba(0, 0, 0, 0.8);
 
 }
