@@ -13,9 +13,19 @@
 
 .playlist-index-item {
   width: 200px;
+  height: 250px;
+}
+.playlist-button-container {
+  width: 200px;
   height: 200px;
 }
 
 .button-playlist {
-	
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(big_sur.jpg);
+  background-size: cover!important;
+  background-position: 50%;
+  border-radius: 0;
 }
