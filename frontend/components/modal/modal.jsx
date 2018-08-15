@@ -8,7 +8,7 @@ class Modal extends React.Component {
     const { modalIsOpen, toggleModal } = this.props;
 
     return (
-      <div id="modal">
+      <div className="modal-container">
         { modalIsOpen &&
           (<React.Fragment>
             <div className="modal-background" onClick={toggleModal}>

@@ -1,0 +1,33 @@
+.playlist-form-input-box {
+  // background: rgba(72,72,72,1);
+
+  width: 100vw;
+  height: 150px;
+  padding: 32px 20%;
+  background-color: #282828;
+
+}
+
+.playlist-form-input-box label {
+  display: flex;
+  justify-content: flex-start;
+  // align-items: center;
+  flex-direction: column;
+
+}
+
+.playlist-form-label h3{
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  font-weight: 400;
+  color: #fff;
+  text-transform: none;
+  margin-bottom: .5em;
+
+}
+
+.playlist-title-input {
+  font-size: 32px;
+  font-weight: 900; 
+}

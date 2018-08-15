@@ -26,18 +26,20 @@ class PlaylistForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="playlist-form-container">
         <h1>Create new playlist</h1>
         <form className="playlist-form" onSubmit={(e) => this.handleSubmit(e)}>
-          <label>Playlist Name
-            <input
-              className="playlist-title-input"
-              autoFocus
-              type="text"
-              placeholder="Start typing..."
-              onChange={this.update('title')}
-              value={this.state.title}></input>
-          </label>
+          <div className="playlist-form-input-box">
+            <label className="playlist-form-label"><h3>Playlist Name</h3>
+              <input
+                className="playlist-title-input"
+                autoFocus
+                type="text"
+                placeholder="Start typing..."
+                onChange={this.update('title')}
+                value={this.state.title}></input>
+            </label>
+          </div>
           <button onClick={this.props.toggleModal}>Cancel</button>
           <button type="submit">Create</button>
         </form>
