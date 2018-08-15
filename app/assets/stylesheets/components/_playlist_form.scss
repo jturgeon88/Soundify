@@ -1,0 +1,68 @@
+
+.playlist-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.playlist-form-header {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-times {
+  font-size: 50px;
+
+}
+
+.playlist-form-input-box {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 150px;
+  padding: 32px 20%;
+  background-color: #282828;
+
+}
+
+.playlist-form-input-box label {
+  display: flex;
+  justify-content: flex-start;
+  // align-items: center;
+  flex-direction: column;
+  padding: 0 2em;
+}
+
+.playlist-form-label h3{
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  font-weight: 400;
+  color: #fff;
+  text-transform: none;
+  margin-bottom: .5em;
+}
+
+.playlist-title-input {
+  font-family: "Montserrat";
+  font-size: 48px;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+}
+
+.playlist-form-buttons {
+  margin-top: 40px;
+}
+
+.playlist-form-buttons button {
+  margin: 0 10px;
+  font-size: 100%;
+  width: auto;
+  padding: 0 45px;
+}
+
+// .playlist-form-buttons:first-child {
+//   background-color: transparent;
+// }

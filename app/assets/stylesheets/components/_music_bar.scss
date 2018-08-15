@@ -1,8 +1,9 @@
 .music-bar-container {
-  position: absolute;
+  position: fixed;
+  vertical-align: baseline;
   bottom: 0;
   width: 100%;
-  
+
 }
 
 .music-bar-footer {
