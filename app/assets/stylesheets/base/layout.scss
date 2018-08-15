@@ -73,8 +73,31 @@ button {
   margin: 20px;
 }
 
+.button-transparent {
+	background: hsla(0,0%,9%,.7);
+	border: solid #ddd 2px;
+}
+
+.button-close {
+  background: transparent;
+  width: auto;
+  margin-bottom: 50px;
+}
+
+
 button:hover {
   color: #fff;
+	background-color: #1ED7D0;
+  transform: scale(1.06);
+}
+
+.button-transparent:hover {
+	background: hsla(0,0%,9%,.7);
+	border: solid #fff 2px;
+}
+
+.button-close:hover {
+	background: transparent;
 }
 
 a:hover {

@@ -27,8 +27,11 @@ class PlaylistForm extends React.Component {
   render () {
     return (
       <div className="playlist-form-container">
-        <h1>Create new playlist</h1>
         <form className="playlist-form" onSubmit={(e) => this.handleSubmit(e)}>
+          <div className="playlist-form-header">
+            <button className="button-close" onClick={this.props.toggleModal}><i className="fas fa-times"></i></button>
+            <h1>Create new playlist</h1>
+          </div>
           <div className="playlist-form-input-box">
             <label className="playlist-form-label"><h3>Playlist Name</h3>
               <input
@@ -40,8 +43,10 @@ class PlaylistForm extends React.Component {
                 value={this.state.title}></input>
             </label>
           </div>
-          <button onClick={this.props.toggleModal}>Cancel</button>
-          <button type="submit">Create</button>
+          <div className="playlist-form-buttons">
+            <button className="button-transparent" onClick={this.props.toggleModal}>Cancel</button>
+            <button type="submit">Create</button>
+          </div>
         </form>
       </div>
     )
