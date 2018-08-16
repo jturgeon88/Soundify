@@ -14,7 +14,10 @@ class PlaylistIndexItem extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="playlist-index-item">
+        <div className="playlist-button-container">
+          <button className="button-playlist" onClick={this.handleClick}></button>
+        </div>
         <Link to={`/collections/playlists/${this.props.playlist.id}`}>
           <li className="playlistStyle">
             <ul className="playlist-index-item-padding">
@@ -23,7 +26,6 @@ class PlaylistIndexItem extends React.Component {
             </ul>
           </li>
         </Link>
-        <button onClick={this.handleClick}>Play Playlist</button>
       </div>
     );
   }

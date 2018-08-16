@@ -17,7 +17,6 @@ class MainPage extends React.Component {
   render () {
     return (
       <div className="main-page-container">
-        <h1>MainPage</h1>
         <Switch>
           <Route exact path='/collections/playlists' component={HeaderNavContainer} />
           <Route exact path='/collections/songs' component={HeaderNavContainer} />
