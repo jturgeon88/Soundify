@@ -11,7 +11,6 @@
   flex-direction: column;
 
 
-
   top: 24vh;
   left: 0vw;
   z-index: 10;
@@ -24,6 +23,7 @@
 }
 
 .modal-background {
+  overflow: scroll;
   // position: absolute;
   position: fixed;
   width: 100vw;
