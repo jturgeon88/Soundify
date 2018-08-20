@@ -26,10 +26,10 @@ class PlaylistIndex extends React.Component {
         destroySongToAdd={destroySongToAdd}
       />
     ));
+    const songsModal = (Object.keys(this.props.songToAdd).length === 0 && this.props.songToAdd.constructor === Object) ? false : true;
 
     return (
-      <div className="playlists-index-container">
-        <h1 className="playlists-header">Playlists: </h1>
+      <div className={"playlists-index-container " + (songsModal ? 'modal-hidden' : '')}>
         <div className="playlists-index">
           <ul className = "playlists-grid-container">
             {PlaylistsList}

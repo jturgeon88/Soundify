@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 
   return {
     playlists: playlistsArr,
-    songToAdd: state.entities.songToAdd
+    songToAdd: state.entities.songToAdd,
+    modalIsOpen: state.ui.modal
   }
 };
 
