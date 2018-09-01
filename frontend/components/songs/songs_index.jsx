@@ -17,10 +17,10 @@ class SongsIndex extends React.Component {
 
   render() {
     // Get songs array from props
-    const { songs } = this.props;
+    const { songs, toggleModal, addSongToAdd } = this.props;
 
     // Map over the songs array and create a SongsIndexItem from each song object
-    const SongsListItems = songs.map(song => <SongIndexItem key={song.id} song={song} />)
+    const SongsListItems = songs.map(song => <SongIndexItem key={song.id} song={song} toggleModal={toggleModal} addSongToAdd={addSongToAdd} />)
 
     return (
       <div className="songs-index-container">

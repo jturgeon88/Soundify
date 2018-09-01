@@ -11,6 +11,7 @@ import MusicBarContainer from './music_bar/music_bar_container';
 import { fetchPlaylist } from '../actions/playlist_actions';
 import { ModalRoute } from '../util/route_util';
 import PlaylistFormContainer from './playlist_form/playlist_form_container';
+import PlaylistIndexContainer from './playlists/playlist_index_container';
 
 
 class App extends React.Component {
@@ -41,8 +42,11 @@ class App extends React.Component {
 
         <Switch>
           <ModalRoute path="/collections/playlists" component={PlaylistFormContainer} />
-          <ModalRoute path="/collections" component={PlaylistFormContainer} />
+          <ModalRoute exact path="/collections" component={PlaylistFormContainer} />
         </Switch>
+
+        <ModalRoute path="/collections/songs" component={PlaylistIndexContainer} />
+
 
         <ProtectedRoute path="/" component={MusicBarContainer} />
         <Switch>

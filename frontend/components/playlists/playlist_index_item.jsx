@@ -7,9 +7,24 @@ class PlaylistIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  isEmpty(obj) {
+      for(var key in obj) {
+          if(obj.hasOwnProperty(key))
+              return false;
+      }
+      return true;
+  }
+
   handleClick(event) {
     event.preventDefault();
-    this.props.fetchAndPlayPlaylist(this.props.playlist.id);
+    if (Object.keys(this.props.songToAdd).length === 0 && this.props.songToAdd.constructor === Object) {
+      this.props.fetchAndPlayPlaylist(this.props.playlist.id);
+    } else {
+      const playlistAdd = { playlist_id: this.props.playlist.id, song_id: this.props.songToAdd.id };
+      this.props.createPlaylistAdd(playlistAdd);
+      this.props.toggleModal();
+      this.props.destroySongToAdd();
+    }
   }
 
   render () {

@@ -6,6 +6,7 @@ import songsReducer from './songs_reducer';
 import artistsReducer from './artists_reducer';
 import playlistAddsReducer from './playlist_adds_reducer';
 import musicBarReducer from './music_bar_reducer';
+import songToAddReducer from './song_to_add_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -13,7 +14,8 @@ const entitiesReducer = combineReducers({
   playlist_adds: playlistAddsReducer,
   songs: songsReducer,
   artists: artistsReducer,
-  nowPlayingQueue: musicBarReducer
+  nowPlayingQueue: musicBarReducer,
+  songToAdd: songToAddReducer
 });
 
 export default entitiesReducer;

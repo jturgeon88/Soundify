@@ -1,5 +1,19 @@
 .playlists-index-container {
   margin: 10px;
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  top: 0vh;
+  left: 0vw;
+  height: 100%;
+  // width: 100%;
+  // height: 200px;
+}
+.modal-hidden {
+  z-index: 10;
+  top: -60vh;
 }
 
 .playlists-header {
@@ -8,6 +22,19 @@
 
 .playlists-index {
   float: left;
+}
+
+.playlists-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding-bottom: 200px;
+}
+
+.playlists-grid-item {
+
 }
 
 
@@ -28,4 +55,8 @@
   background-size: cover!important;
   background-position: 50%;
   border-radius: 0;
+}
+
+.playlist-index-item-padding {
+  margin-top: 20px;
 }
