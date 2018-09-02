@@ -26,6 +26,7 @@ class MusicBar extends React.Component {
     this.nextSong = this.nextSong.bind(this);
     this.prevSong = this.prevSong.bind(this);
     this.toggleShuffle = this.toggleShuffle.bind(this);
+    this.togglePlayButton = this.togglePlayButton.bind(this);
   }
 
   changeSong(newSong) {
@@ -38,6 +39,16 @@ class MusicBar extends React.Component {
 
   componentDidMount() {
 
+  }
+
+  togglePlayButton () {
+    const { isPlaying, togglePlaying } = this.props;
+    if (isPlaying) {
+      this.refs.player.pause()
+    } else {
+      this.refs.player.play()
+    }
+    togglePlaying();
   }
 
   prevSong (event) {
@@ -82,21 +93,17 @@ class MusicBar extends React.Component {
       return (
         <div className="music-bar-container">
           <footer className="music-bar-footer">
-            <h1>Music Bar</h1>
-
             <audio
               ref="player"
               src={nowPlayingSong.src}
-              autoPlay
+              autoPlay={this.props.isPlaying ? true : false }
             />
-            <div>
-              <button onClick={this.prevSong}>Prev Song</button>
-              <button onClick={() => this.refs.player.play()}>Play</button>
-              <button onClick={() => this.refs.player.pause()}>Pause</button>
-              <button onClick={this.nextSong}>Next Song</button>
-              <button onClick={this.toggleShuffle}>Shuffle</button>
+            <div className='music-bar-buttons'>
+                <button className='music-bar-button' onClick={this.prevSong}><i className="fas fa-step-backward"></i></button>
+                <button className='music-bar-button' onClick={this.togglePlayButton}>{ this.props.isPlaying ? <i className="far fa-pause-circle"></i> : <i className="far fa-play-circle"></i>}</button>
+                <button className='music-bar-button' onClick={this.nextSong}><i className="fas fa-step-forward"></i></button>
+                <button className='music-bar-button' onClick={this.toggleShuffle}><i className="fas fa-random"></i></button>
             </div>
-
           </footer>
         </div>
       );
@@ -105,15 +112,14 @@ class MusicBar extends React.Component {
       return (
         <div className="music-bar-container">
           <footer className="music-bar-footer">
-            <h1>Music Bar</h1>
 
             <audio
               ref="player"
               src={this.state.currentSong}
             />
-            <div>
-              <button onClick={() => this.refs.player.play()}>Play</button>
-              <button onClick={() => this.refs.player.pause()}>Pause</button>
+            <div className='music-bar-buttons'>
+              <button className='music-bar-button' onClick={() => this.refs.player.play()}><i className="far fa-play-circle"></i></button>
+              <button className='music-bar-button' onClick={() => this.refs.player.pause()}><i className="far fa-pause-circle"></i></button>
             </div>
 
           </footer>

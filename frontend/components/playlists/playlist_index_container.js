@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPlaylists, fetchPlaylist } from '../../actions/playlist_actions';
-import { fetchAndPlayPlaylist, fetchNextPlaylist } from '../../actions/music_bar_actions';
+import { fetchAndPlayPlaylist, fetchNextPlaylist, setPlaying } from '../../actions/music_bar_actions';
 import { createPlaylistAdd } from '../../actions/playlist_add_actions';
 import { toggleModal } from '../../actions/modal_actions';
 import { destroySongToAdd } from '../../actions/song_to_add_actions';
@@ -25,7 +25,8 @@ const mapDispatchToProps = dispatch => ({
   fetchNextPlaylist: (id) => dispatch(fetchNextPlaylist(id)),
   createPlaylistAdd: playlistAdd => dispatch(createPlaylistAdd(playlistAdd)),
   toggleModal: () => dispatch(toggleModal()),
-  destroySongToAdd: () => dispatch(destroySongToAdd())
+  destroySongToAdd: () => dispatch(destroySongToAdd()),
+  setPlaying: () => dispatch(setPlaying())
 });
 
 export default connect(

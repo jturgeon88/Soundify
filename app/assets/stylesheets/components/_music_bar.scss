@@ -7,7 +7,11 @@
 }
 
 .music-bar-footer {
-  background-color: orange;
+  background-color: #282828;
   position: relative;
   z-index: 1;
+}
+
+.music-bar-buttons button {
+  background: transparent;
 }

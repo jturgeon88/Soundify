@@ -11,7 +11,16 @@ class PlaylistIndex extends React.Component {
   }
 
   render() {
-    const { playlists, songToAdd, createPlaylistAdd, fetchNextPlaylist, fetchAndPlayPlaylist, toggleModal, destroySongToAdd } = this.props;
+    const {
+      playlists,
+      songToAdd,
+      createPlaylistAdd,
+      fetchNextPlaylist,
+      fetchAndPlayPlaylist,
+      toggleModal,
+      destroySongToAdd,
+      setPlaying 
+    } = this.props;
 
     const PlaylistsList = playlists.map(playlist => (
       <PlaylistIndexItem
@@ -24,6 +33,7 @@ class PlaylistIndex extends React.Component {
         createPlaylistAdd={createPlaylistAdd}
         toggleModal={toggleModal}
         destroySongToAdd={destroySongToAdd}
+        setPlaying={setPlaying}
       />
     ));
     const songsModal = (Object.keys(this.props.songToAdd).length === 0 && this.props.songToAdd.constructor === Object) ? false : true;
