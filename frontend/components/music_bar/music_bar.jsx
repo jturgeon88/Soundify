@@ -1,17 +1,5 @@
 import React from 'react';
 import Audio from 'react-audioplayer';
-import ReactAudioPlayer from 'react-audio-player';
-{/*
-
-  <Audio
-  width={600}
-  height={400}
-  autoPlay={true}
-  playlist={nowPlayingQueue}
-  />
-
-  */}
-
 
 class MusicBar extends React.Component {
   constructor (props) {
@@ -31,14 +19,6 @@ class MusicBar extends React.Component {
 
   changeSong(newSong) {
     this.setState({currentSong: newSong})
-  }
-
-  componentWillMount() {
-    // console.log("testingWILLMOUNT");
-  }
-
-  componentDidMount() {
-
   }
 
   togglePlayButton () {
@@ -70,62 +50,32 @@ class MusicBar extends React.Component {
     this.setState({shuffle: !this.state.shuffle, currentSongIdx: Math.floor(Math.random() * Math.floor(this.props.nowPlayingQueue.length))});
   }
 
-
   render() {
     const { nowPlayingQueue } = this.props;
-    const nowPlayingSong = nowPlayingQueue[this.state.currentSongIdx];
-
+    let nowPlayingSong;
     if (!(nowPlayingQueue == undefined) && (nowPlayingQueue.length > 0)) {
-      // if (this.state.shuffle) {
-      //   const randomIndex = Math.floor(Math.random() * Math.floor(nowPlayingQueue.length));
-      //   nowPlayingSong = nowPlayingQueue[randomIndex];
-      //   console.log("Shuffling");
-      //   console.log(nowPlayingSong);
-      //   console.log(randomIndex);
-      //
-      // } else {
-        console.log(this.state.shuffle);
-        console.log(nowPlayingSong);
-        console.log(this.state.currentSongIdx);
-
-      // }
-
-      return (
-        <div className="music-bar-container">
-          <footer className="music-bar-footer">
-            <audio
-              ref="player"
-              src={nowPlayingSong.src}
-              autoPlay={this.props.isPlaying ? true : false }
-            />
-            <div className='music-bar-buttons'>
-                <button className='music-bar-button music-bar-button-sm' onClick={this.prevSong}><i className="fas fa-step-backward"></i></button>
-                <button className='music-bar-button' onClick={this.togglePlayButton}>{ this.props.isPlaying ? <i className="far fa-pause-circle"></i> : <i className="far fa-play-circle"></i>}</button>
-                <button className='music-bar-button music-bar-button-sm' onClick={this.nextSong}><i className="fas fa-step-forward"></i></button>
-                <button className={'music-bar-button music-bar-button-sm ' + (this.state.shuffle ? 'shuffling' : '')} onClick={this.toggleShuffle}><i className="fas fa-random"></i></button>
-            </div>
-          </footer>
-        </div>
-      );
+      nowPlayingSong = nowPlayingQueue[this.state.currentSongIdx].src;
     } else {
-      console.log("Test 1");
-      return (
-        <div className="music-bar-container">
-          <footer className="music-bar-footer">
-
-            <audio
-              ref="player"
-              src={this.state.currentSong}
-            />
-            <div className='music-bar-buttons'>
-              <button className='music-bar-button' onClick={() => this.refs.player.play()}><i className="far fa-play-circle"></i></button>
-              <button className='music-bar-button' onClick={() => this.refs.player.pause()}><i className="far fa-pause-circle"></i></button>
-            </div>
-
-          </footer>
-        </div>
-      );
+      nowPlayingSong = this.state.currentSong;
     }
+
+    return (
+      <div className="music-bar-container">
+        <footer className="music-bar-footer">
+          <audio
+            ref="player"
+            src={nowPlayingSong}
+            autoPlay={this.props.isPlaying ? true : false }
+          />
+          <div className='music-bar-buttons'>
+              <button className='music-bar-button music-bar-button-sm' onClick={this.prevSong}><i className="fas fa-step-backward"></i></button>
+              <button className='music-bar-button' onClick={this.togglePlayButton}>{ this.props.isPlaying ? <i className="far fa-pause-circle"></i> : <i className="far fa-play-circle"></i>}</button>
+              <button className='music-bar-button music-bar-button-sm' onClick={this.nextSong}><i className="fas fa-step-forward"></i></button>
+              <button className={'music-bar-button music-bar-button-sm ' + (this.state.shuffle ? 'shuffling' : '')} onClick={this.toggleShuffle}><i className="fas fa-random"></i></button>
+          </div>
+        </footer>
+      </div>
+    );
   }
 }
 
