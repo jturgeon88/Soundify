@@ -10,8 +10,40 @@
   background-color: #282828;
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.music-bar-buttons {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .music-bar-buttons button {
   background: transparent;
+  padding: 10px 20px;
+  font-weight: 100;
+}
+
+.music-bar-button {
+  font-size: 44px;
+}
+
+.music-bar-button:hover {
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.music-bar-button-sm {
+  font-size: 18px;
+}
+
+.shuffling {
+  color: #1db954;
+}
+
+.shuffling:hover {
+  color: #1ed760;
+
 }

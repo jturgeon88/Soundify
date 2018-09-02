@@ -99,10 +99,10 @@ class MusicBar extends React.Component {
               autoPlay={this.props.isPlaying ? true : false }
             />
             <div className='music-bar-buttons'>
-                <button className='music-bar-button' onClick={this.prevSong}><i className="fas fa-step-backward"></i></button>
+                <button className='music-bar-button music-bar-button-sm' onClick={this.prevSong}><i className="fas fa-step-backward"></i></button>
                 <button className='music-bar-button' onClick={this.togglePlayButton}>{ this.props.isPlaying ? <i className="far fa-pause-circle"></i> : <i className="far fa-play-circle"></i>}</button>
-                <button className='music-bar-button' onClick={this.nextSong}><i className="fas fa-step-forward"></i></button>
-                <button className='music-bar-button' onClick={this.toggleShuffle}><i className="fas fa-random"></i></button>
+                <button className='music-bar-button music-bar-button-sm' onClick={this.nextSong}><i className="fas fa-step-forward"></i></button>
+                <button className={'music-bar-button music-bar-button-sm ' + (this.state.shuffle ? 'shuffling' : '')} onClick={this.toggleShuffle}><i className="fas fa-random"></i></button>
             </div>
           </footer>
         </div>
