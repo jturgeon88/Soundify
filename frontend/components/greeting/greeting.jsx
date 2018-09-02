@@ -10,7 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
       </header>
       <section className="login-signup-container">
         <nav className="login-signup">
-          <button className="button button-session button-signup">
+          <button className="button-teal button-session button-signup">
             <Link to="/signup">Sign Up</Link>
           </button>
           <div className="separator-container">
@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, logout }) => {
             <div className="separator-text">Already have an account?</div>
             <div className="separator-line"></div>
           </div>
-          <button className="button button-session button-login">
+          <button className="button-teal button-session button-login">
             <Link to="/login">Log In</Link>
           </button>
         </nav>
@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup className="header-group">
       <h1 className="header-name">Welcome to Soundify {currentUser.username}!</h1>
-      <button className="header-button" onClick={logout}>Log Out</button>
+      <button className="button-transparent header-button" onClick={logout}>Log Out</button>
     </hgroup>
   );
 

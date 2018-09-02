@@ -60,7 +60,7 @@ p {
   padding: 30px 10px;
 }
 
-button {
+.button-teal {
 	background-color: #1DB9C4;
 	border-color: #1DB9C4;
 	color: #eee;
@@ -73,6 +73,12 @@ button {
   margin: 20px;
 }
 
+.button-teal:hover {
+	color: #fff;
+	background-color: #1ED7D0;
+	transform: scale(1.06);
+}
+
 .button-transparent {
 	background: hsla(0,0%,9%,.7);
 	border: solid #ddd 2px;
@@ -82,12 +88,6 @@ button {
   background: transparent;
   width: auto;
   margin-bottom: 50px;
-}
-
-button:hover {
-  color: #fff;
-	background-color: #1ED7D0;
-  transform: scale(1.06);
 }
 
 .button-transparent:hover {

@@ -14,7 +14,7 @@ class HeaderNav extends React.Component {
           <li><Link to="/collections/playlists">Playlists</Link></li>
           <li><Link to="/collections/songs">Songs</Link></li>
           <li><Link to="/collections/artists">Artists</Link></li>
-          <li><button onClick={toggleModal}>New Playlist</button></li>
+          <li><button className='button-teal' onClick={toggleModal}>New Playlist</button></li>
         </ul>
       </div>
     );
