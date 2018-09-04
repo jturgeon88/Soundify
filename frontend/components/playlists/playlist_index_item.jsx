@@ -19,6 +19,7 @@ class PlaylistIndexItem extends React.Component {
     event.preventDefault();
     if (Object.keys(this.props.songToAdd).length === 0 && this.props.songToAdd.constructor === Object) {
       this.props.fetchAndPlayPlaylist(this.props.playlist.id);
+      this.props.setPlaying();
     } else {
       const playlistAdd = { playlist_id: this.props.playlist.id, song_id: this.props.songToAdd.id };
       this.props.createPlaylistAdd(playlistAdd);

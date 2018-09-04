@@ -4,6 +4,9 @@ export const ADD_PLAYLIST_TO_QUEUE = "ADD_PLAYLIST_TO_QUEUE";
 export const ADD_SONG_TO_QUEUE = "ADD_SONG_TO_QUEUE";
 export const PLAY_PLAYLIST = "PLAY_PLAYLIST";
 export const PLAY_SONG = "PLAY_SONG";
+export const TOGGLE_PLAY = "TOGGLE_PLAY";
+export const SET_PLAY = "SET_PLAY";
+
 
 
 export const addPlaylistToQueue = playlist => ({
@@ -26,6 +29,14 @@ export const playSong = song => ({
   song
 });
 
+export const togglePlay = () => ({
+  type: TOGGLE_PLAY
+});
+
+export const setPlay = () => ({
+  type: SET_PLAY
+});
+
 export const fetchNextPlaylist = id => dispatch => (
   MusicBarAPIUtil.fetchPlaylist(id)
     .then(playlist => dispatch(addPlaylistToQueue(playlist)))
@@ -44,4 +55,12 @@ export const fetchAndPlayPlaylist = id => dispatch => (
 export const fetchAndPlaySong = id => dispatch => (
   MusicBarAPIUtil.fetchSong(id)
   .then(song => dispatch(playSong(song)))
+);
+
+export const togglePlaying = () => dispatch => (
+  dispatch(togglePlay())
+);
+
+export const setPlaying = () => dispatch => (
+  dispatch(setPlay())
 );

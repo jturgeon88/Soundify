@@ -45,7 +45,7 @@ class PlaylistForm extends React.Component {
           </div>
           <div className="playlist-form-buttons">
             <button className="button-transparent" onClick={this.props.toggleModal}>Cancel</button>
-            <button type="submit">Create</button>
+            <button className="button-teal" type="submit">Create</button>
           </div>
         </form>
       </div>
