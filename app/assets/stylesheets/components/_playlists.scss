@@ -1,3 +1,4 @@
+
 .playlists-index-container {
   margin: 10px;
   position:relative;
@@ -13,7 +14,7 @@
 }
 .modal-hidden {
   z-index: 10;
-  top: -60vh;
+  top: -200px;
 }
 
 .playlists-header {
@@ -21,26 +22,20 @@
 }
 
 .playlists-index {
-  float: left;
+  // float: left;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.playlists-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  padding-bottom: 200px;
+.playlists-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.playlists-grid-item {
-
-}
-
-
-.playlist-index-item {
-  width: 200px;
-  height: 250px;
+.playlists-column {
+  flex-basis: 100%;
+  margin: 10px;
 }
 .playlist-button-container {
   width: 200px;
@@ -59,4 +54,16 @@
 
 .playlist-index-item-padding {
   margin-top: 20px;
+}
+
+@media screen and (min-width: 400px) {
+  ._25 {
+    flex: 2.5;
+  }
+  ._55 {
+    flex: 5.5;
+  }
+  ._20 {
+    flex: 2;
+  }
 }
