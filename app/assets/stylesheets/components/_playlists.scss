@@ -14,7 +14,7 @@
 }
 .modal-hidden {
   z-index: 10;
-  top: -60vh;
+  top: -200px;
 }
 
 .playlists-header {
@@ -56,7 +56,7 @@
   margin-top: 20px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 400px) {
   ._25 {
     flex: 2.5;
   }
