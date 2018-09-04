@@ -6,21 +6,22 @@ import { Link } from 'react-router-dom';
 class SongsIndex extends React.Component {
   componentDidMount() {
     // fetch the songs from the database as soon as the component has mounted
-    console.log("TESTING SONGS FORMAT1")
-    console.log(this.props.songs.length);
     if (this.props.songs.length == 0) {
       this.props.fetchSongs();
     }
-    console.log("TESTING SONGS FORMAT2")
-    console.log(this.props.songs.length);
+
+    if (Object.keys(this.props.artists).length == 0) {
+      this.props.fetchArtists();
+    }
+
   };
 
   render() {
     // Get songs array from props
-    const { songs, toggleModal, addSongToAdd } = this.props;
-
+    const { songs, toggleModal, addSongToAdd, artists } = this.props;
+    console.log('artists', artists);
     // Map over the songs array and create a SongsIndexItem from each song object
-    const SongsListItems = songs.map(song => <SongIndexItem key={song.id} song={song} toggleModal={toggleModal} addSongToAdd={addSongToAdd} />)
+    const SongsListItems = songs.map(song => <SongIndexItem key={song.id} song={song} artist={artists[song.artist_id]} toggleModal={toggleModal} addSongToAdd={addSongToAdd} />)
 
     return (
       <div className="songs-index-container">

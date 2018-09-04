@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class SongIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -15,11 +14,11 @@ class SongIndexItem extends React.Component {
   }
 
   render () {
-    const { song, toggleModal, addSongToAdd } = this.props;
+    const { song, toggleModal, addSongToAdd, artist } = this.props;
     return (
       <li className="song-index-item">
         <span className="song-name">{song.name}</span>
-        {/*<span className="song-name">{song.artist.name}</span>*/}
+        <span className="song-name">{artist.name}</span>
         <button className="button-add-song" onClick={this.handleClick} >Add To Playlist</button>
       </li>
     );
