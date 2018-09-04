@@ -30,7 +30,7 @@ class PlaylistIndexItem extends React.Component {
 
   render () {
     return (
-      <div className="playlist-index-item">
+      <div className="playlists-column _25">
         <div className="playlist-button-container">
           <button className="button-playlist" onClick={this.handleClick}></button>
         </div>

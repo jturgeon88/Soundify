@@ -19,7 +19,7 @@ class PlaylistIndex extends React.Component {
       fetchAndPlayPlaylist,
       toggleModal,
       destroySongToAdd,
-      setPlaying 
+      setPlaying
     } = this.props;
 
     const PlaylistsList = playlists.map(playlist => (
@@ -40,8 +40,8 @@ class PlaylistIndex extends React.Component {
 
     return (
       <div className={"playlists-index-container " + (songsModal ? 'modal-hidden' : '')}>
-        <div className="playlists-index">
-          <ul className = "playlists-grid-container">
+        <div className="playlists-index container">
+          <ul className = "playlists-row">
             {PlaylistsList}
           </ul>
         </div>
