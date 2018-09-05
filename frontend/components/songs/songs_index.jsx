@@ -28,7 +28,6 @@ class SongsIndex extends React.Component {
 
     return (
       <div className="songs-index-container">
-        <h2>Songs:</h2>
         <div className="songs-index">
           <ul>
             {SongsListItems}
