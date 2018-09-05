@@ -18,13 +18,31 @@ class SongsIndex extends React.Component {
 
   render() {
     // Get songs array from props
-    const { songs, toggleModal, addSongToAdd, artists } = this.props;
+    const {
+      songs,
+      toggleModal,
+      addSongToAdd,
+      artists,
+      fetchAndPlaySong,
+      togglePlaying,
+      isPlaying
+    } = this.props;
     if (Object.keys(artists).length == 0) {
-      return (<div>Temp</div>)
+      return (<div></div>);
     }
     console.log('artists', artists);
     // Map over the songs array and create a SongsIndexItem from each song object
-    const SongsListItems = songs.map(song => <SongIndexItem key={song.id} song={song} artist={artists[song.artist_id]} toggleModal={toggleModal} addSongToAdd={addSongToAdd} />)
+    const SongsListItems = songs.map(song => (
+      <SongIndexItem
+        key={song.id}
+        song={song}
+        artist={artists[song.artist_id]}
+        toggleModal={toggleModal}
+        addSongToAdd={addSongToAdd}
+        fetchAndPlaySong={fetchAndPlaySong}
+        togglePlaying={togglePlaying}
+        isPlaying={isPlaying} />
+    ));
 
     return (
       <div className="songs-index-container">
