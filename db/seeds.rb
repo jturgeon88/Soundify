@@ -35,9 +35,15 @@ playlist1 = Playlist.create!({ title: "FunkyMonkey", author_id: user1.id })
 playlist2 = Playlist.create!({ title: "ChillaGorilla", author_id: user1.id })
 playlist3 = Playlist.create!({ title: "GrooveFunkistan", author_id: user2.id })
 
-artist1 = Artist.create!({ name: "Isaiah Koala"})
+artist1 = Artist.create!({ name: "Isaiah Koalainmytreetoo"})
 artist2 = Artist.create!({ name: "The Oof Fighters"})
 artist3 = Artist.create!({ name: "Jelton Ohn"})
+artist4 = Artist.create!({ name: "Mel the Groovy Human Being"})
+artist5 = Artist.create!({ name: "Fax Most"})
+artist6 = Artist.create!({ name: "RDJ2"})
+artist7 = Artist.create!({ name: "Onobob"})
+artist8 = Artist.create!({ name: "Alicia Values"})
+
 
 song1 = Song.create!({ name: "Ukulele", artist_id: artist1.id, src: "bensound-ukulele.mp3"})
 song2 = Song.create!({ name: "Epic", artist_id: artist2.id, src: "bensound-epic.mp3"})
