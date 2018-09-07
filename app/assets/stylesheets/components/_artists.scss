@@ -1,4 +1,4 @@
-.playlists-index-container {
+.artists-index-container {
   margin: 10px;
   position:relative;
   display: flex;
@@ -12,43 +12,39 @@
   // height: 200px;
 }
 
-.modal-hidden {
-  z-index: 10;
-  top: -200px;
-}
-
-.playlists-index {
+.artists-index {
   // float: left;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.playlists-row {
+.artists-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.playlists-column {
+.artists-column {
   // flex-basis: 100%;
   margin: 10px;
 }
-.playlist-button-container {
+
+.artist-button-container {
   width: 200px;
   height: 200px;
 }
 
-.button-playlist {
+.button-artist {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url(big_sur.jpg);
+  background-image: url(congrejo.jpg);
   background-size: cover!important;
   background-position: 50%;
   border-radius: 0;
 }
 
-.playlist-index-item-padding {
+.artist-index-item-padding {
   margin-top: 20px;
   text-overflow: ellipsis;
   max-width: 200px;

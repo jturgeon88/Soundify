@@ -35,12 +35,12 @@ class PlaylistIndexItem extends React.Component {
           <button className="button-playlist" onClick={this.handleClick}></button>
         </div>
         <Link to={`/collections/playlists/${this.props.playlist.id}`}>
-          <li className="playlistStyle">
+          <div className="playlistStyle">
             <ul className="playlist-index-item-padding">
               <li>{this.props.playlist.title}</li>
               <li><span>Number of songs: </span><span>{this.props.playlist.songs.length}</span></li>
             </ul>
-          </li>
+          </div>
         </Link>
       </div>
     );

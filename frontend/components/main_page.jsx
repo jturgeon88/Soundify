@@ -31,8 +31,8 @@ class MainPage extends React.Component {
           <Route exact path='/collections' component={PlaylistIndexContainer} />
         </Switch>
 
-        <Route path='/collections/songs' component={SongsIndexContainer} />
-        <Route path='/collections/artists' component={ArtistsIndexContainer} />
+        <Route exact path='/collections/songs' component={SongsIndexContainer} />
+        <Route exact path='/collections/artists' component={ArtistsIndexContainer} />
 
       </div>
     );
