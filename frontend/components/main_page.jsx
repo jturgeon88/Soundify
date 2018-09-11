@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HeaderNavContainer from './header_nav_container';
 import PlaylistIndexContainer from './playlists/playlist_index_container';
+import PlaylistShowContainer from './playlists/playlist_show_container';
 import SongsIndexContainer from './songs/songs_index_container';
 import ArtistsIndexContainer from './artists/artists_index_container';
 import { fetchPlaylists } from '../actions/playlist_actions';
@@ -29,6 +30,7 @@ class MainPage extends React.Component {
         <Switch>
           <Route exact path='/collections/playlists' component={PlaylistIndexContainer} />
           <Route exact path='/collections' component={PlaylistIndexContainer} />
+          <Route exact path="/collections/playlists/:playlistId" component={PlaylistShowContainer} />
         </Switch>
 
         <Route exact path='/collections/songs' component={SongsIndexContainer} />

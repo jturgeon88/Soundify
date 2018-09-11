@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 // TODO We may want to use Link to render a link to the artist show page later
 
 class SongsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPlaylist: this.props.showPlaylist
+    }
+  }
   componentDidMount() {
     // fetch the songs from the database as soon as the component has mounted
     if (this.props.songs.length == 0) {
@@ -19,17 +25,27 @@ class SongsIndex extends React.Component {
   render() {
     // Get songs array from props
     const {
-      songs,
       toggleModal,
       addSongToAdd,
       artists,
       fetchAndPlaySong,
       togglePlaying,
-      isPlaying
+      isPlaying,
+      showPlaylist
     } = this.props;
+
+    console.log('showPlaylist', !!showPlaylist);
+    // console.log('showPlaylist.songs', showPlaylist.songs);
+    let songs;
+    if (!!showPlaylist) {
+      songs = showPlaylist.songs;
+    } else {
+      songs = this.props.songs;
+    }
     if (Object.keys(artists).length == 0) {
       return (<div></div>);
     }
+    console.log('songs', songs);
     console.log('artists', artists);
     // Map over the songs array and create a SongsIndexItem from each song object
     const SongsListItems = songs.map(song => (

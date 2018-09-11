@@ -7,13 +7,15 @@ import { fetchAndPlaySong, togglePlaying } from '../../actions/music_bar_actions
 
 import SongsIndex from './songs_index';
 
-const mapStateToProps = ({ entities }) => {
+const mapStateToProps = ({ entities }, ownProps) => {
   const songsArr = Object.values(entities.songs);
+  const showPlaylist = ownProps.showPlaylist;
 
   return {
     songs: songsArr,
     artists: entities.artists,
-    isPlaying: entities.isPlaying
+    isPlaying: entities.isPlaying,
+    showPlaylist
   };
 };
 
