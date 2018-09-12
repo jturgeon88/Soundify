@@ -40,7 +40,14 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.698);
 }
+
 .button-play-song {
   margin-right: 20px;
   padding: 0 5px;
+}
+
+.button-add-song:hover, .song-artist:hover {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: underline;
 }
