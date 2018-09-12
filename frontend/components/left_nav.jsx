@@ -22,7 +22,7 @@ const LeftNav = () => (
             </li>
             <li>
               <Link to="/collections/playlists" className="left-nav-group">
-                <i class="fas fa-music"></i>
+                <i className="fas fa-music"></i>
                 <h3>Your Music</h3>
               </Link>
             </li>

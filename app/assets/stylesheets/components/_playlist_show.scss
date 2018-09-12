@@ -1,0 +1,37 @@
+.playlist-show-container {
+  display: flex;
+}
+
+.playlist-show-info {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0 40px;
+  align-items: center;
+}
+
+.playlist-songs-list {
+  width: 100%;
+}
+
+.playlist-show-image {
+  width: 250px;
+  height: 250px;
+  background-image: url(country_taz.jpg);
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 20px 0px;
+}
+
+.playlist-title {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.playlist-length {
+  margin-top: 20px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.playlist-show-play {
+  width: 100px;
+}

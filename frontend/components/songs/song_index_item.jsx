@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SongIndexItem extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class SongIndexItem extends React.Component {
           <section className="song-name-row">
             <div className="song-name-block">
               <span className="song-name">{song.name}</span>
-              <span className="song-artist">{artist.name}</span>
+              <span className="song-artist"><Link to={`/collections/artists/${artist.id}`}>{artist.name}</Link></span>
             </div>
             <button className="button-add-song" onClick={this.handleClick} >Add To Playlist</button>
           </section>
