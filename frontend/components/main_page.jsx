@@ -5,6 +5,7 @@ import PlaylistIndexContainer from './playlists/playlist_index_container';
 import PlaylistShowContainer from './playlists/playlist_show_container';
 import SongsIndexContainer from './songs/songs_index_container';
 import ArtistsIndexContainer from './artists/artists_index_container';
+import SearchContainer from './search/search_container';
 import { fetchPlaylists } from '../actions/playlist_actions';
 
 
@@ -35,6 +36,7 @@ class MainPage extends React.Component {
 
         <Route exact path='/collections/songs' component={SongsIndexContainer} />
         <Route exact path='/collections/artists' component={ArtistsIndexContainer} />
+        <Route exact path='/collections/search' component={SearchContainer} />
 
       </div>
     );
